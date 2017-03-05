@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Moon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYm-Tr-bSa">
+                                <rect key="frame" x="67" y="95" width="240" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="gip-Kn-g9z">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="oqU-bE-rVK">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gip-Kn-g9z" firstAttribute="leading" secondItem="NYm-Tr-bSa" secondAttribute="leading" id="5kR-aT-8PZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gip-Kn-g9z" secondAttribute="trailing" id="BwF-gS-9C5"/>
+                                    <constraint firstItem="gip-Kn-g9z" firstAttribute="top" secondItem="NYm-Tr-bSa" secondAttribute="top" id="Eb9-40-5o4"/>
+                                    <constraint firstAttribute="bottom" secondItem="oqU-bE-rVK" secondAttribute="bottom" id="OFq-Mx-WJN"/>
+                                    <constraint firstItem="oqU-bE-rVK" firstAttribute="top" secondItem="NYm-Tr-bSa" secondAttribute="top" id="SdL-IR-MwY"/>
+                                    <constraint firstAttribute="height" constant="240" id="ZA0-c9-1CY"/>
+                                    <constraint firstAttribute="trailing" secondItem="oqU-bE-rVK" secondAttribute="trailing" id="bqh-m0-UaT"/>
+                                    <constraint firstAttribute="bottom" secondItem="gip-Kn-g9z" secondAttribute="bottom" id="enA-vu-Sqf"/>
+                                    <constraint firstAttribute="width" constant="240" id="lxC-AX-gth"/>
+                                    <constraint firstItem="oqU-bE-rVK" firstAttribute="leading" secondItem="NYm-Tr-bSa" secondAttribute="leading" id="pMD-h2-Lg5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NYm-Tr-bSa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="nXZ-Qh-vlp"/>
+                            <constraint firstItem="NYm-Tr-bSa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rnL-xJ-oJW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="earthImg" destination="gip-Kn-g9z" id="Jee-EB-INd"/>
+                        <outlet property="overlayImg" destination="oqU-bE-rVK" id="8YZ-y1-Ejj"/>
+                        <outlet property="viewContainer" destination="NYm-Tr-bSa" id="4ep-7N-KBc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="earth" width="600" height="590"/>
+        <image name="overlay" width="1024" height="1024"/>
+    </resources>
 </document>
